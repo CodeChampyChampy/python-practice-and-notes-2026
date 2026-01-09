@@ -19,10 +19,11 @@ def access_checking(is_authenticated: bool, is_not_banned: bool) -> bool: # -_- 
     if is_authenticated and is_not_banned :
         has_access = True
     return has_access
+# I could have just used, return is_authenticated and is_not_banned
 
 #Exercise 3 — Required Field Validation
 
-def check_field_validity(my_string: str) ->str:
+def check_field_validity(my_string: str) ->bool:
     # a field is invalid for none or empty string
     is_field_valid = False 
     if my_string:
@@ -49,7 +50,7 @@ def check_admin_access(is_system_available: bool, is_admin:bool) -> str:
     if not is_system_available:
         access_message = "System unavailable"
     elif is_admin:
-        access_message = "Access granted"
+        access_message = "Access granted" #Handle failure cases first
     else:
         access_message = "Access denied"
     return access_message
