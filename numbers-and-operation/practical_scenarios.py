@@ -20,4 +20,3 @@ def convert_seconds_to_minutes(sec):
 #Exercise 16 — Rounded result
 def round_number_to(num_to_round, number_of_decimal):
     return round(num_to_round, number_of_decimal)
-

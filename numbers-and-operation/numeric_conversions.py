@@ -14,8 +14,4 @@ def convert_number_to_float(num)-> float:
 def convert_number_to_int(num)-> int:
     return int(num)
 
-print(convert_string_to_int("24"))
-print(convert_string_to_float("2.4"))
-print(convert_number_to_float(24))
-print(convert_number_to_int(24))
 
