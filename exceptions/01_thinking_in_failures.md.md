@@ -1,9 +1,10 @@
 ## Operation: int(input())
 
 Possible failures:
-- Not a number entered (letter or special character)
+- User enters letters or symbols 
 - Too large number
-- User enter 'none'
+- Empty input
+
 
 Why this matters:
 - It matters the user can enter a number incorrectly or something not supported
@@ -11,9 +12,9 @@ Why this matters:
 ## Operation: a/b
 
 Possible failures:
-- division by 0
-- a/b is not a number 
-- user input
+- Divisor is zero
+- One or both values are not numeric
+- Values originate from invalid user input
 
 Why this matters:
 - Division by zero is impossible
@@ -24,28 +25,30 @@ Why this matters:
 Possible failures(so many):
 - File not found
 - Invalid path
-- Don't have the permission
-- ???
+- Permission denied
+- File is empty
+- Encoding errors
 
 Why this matters:
-- The file is an external ressources, we don't have control over, without proper error handling, it would make the program crash
+- A file is an external ressources, we don't have control over, without proper error handling it would make the program crash
 
 ## Operation: Accessing a dictionary key
 
 Possible failures:
-- Key doesn't exist
-- Key is 'none'
-- ???
+- Key does not exist
+- Key is None
+- Wrong data structure type
 
 Why this matters:
-- To manage properly key/value system, that can rapidly be complex and pose threat 
+- Dictionaries often come from external data (JSON, APIs)
+- Missing keys can cause runtime errors
 
 ## Operation: Calling an external API (simulated)
 
 Possible failures:
-- timeout
-- request denied
-- ...
-
+- Network timeout
+- Request denied
+- Invalid response format
+- Missing expected data
 Why this matters:
-- API are outside our system, and can bring a lot of unexpected variables
+- API are outside our system, and can bring a lot of unexpected variables (APIs can fail even when your code is correct)
